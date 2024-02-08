@@ -32,11 +32,6 @@
   width: 6rem;
 }
 
-.input-box .error {
-  float: right;
-  color: #ff0000;
-}
-
 .input-box .multi {
   display: flex;
   justify-content: space-between;
@@ -53,10 +48,17 @@
 
 .success {
   color: #4caf50;
-  float: right;
+  /* float: right; */
 }
 
+.input-box .error,
 .failure {
   color: #ff0000;
-  float: right;
+  /* float: right; */
+}
+
+.guide {
+  color: gray;
+  font-size: smaller;
+  margin-left: 0.5rem;
 }

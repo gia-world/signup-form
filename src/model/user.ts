@@ -28,23 +28,40 @@ export const userSchema = object({
       "11자리 숫자를 입력해주세요", // 에러메세지 지정
       (value) => value !== undefined && String(value).length === 11 // 테스트 함수(유효성 확인)
     ),
-  email: object().shape({
-    mailName: string()
-      .required("이메일을 입력해주세요")
-      .matches(/^[a-zA-Z]+$/, "영어만 입력 가능합니다"),
-    domain: string()
-      .required("도메인을 입력해주세요")
-      .matches(/^(?:\w+\.)+\w+$/g, "정확한 도메인을 입력해주세요"),
-  }),
-  birthday: object().shape({
-    year: number()
-      .typeError("연도를 선택해주세요")
-      .required("연도를 선택해주세요"),
-    month: number()
-      .typeError("월을 선택해주세요")
-      .required("월을 선택해주세요"),
-    day: number().typeError("일을 선택해주세요").required("일을 선택해주세요"),
-  }),
+  emailName: string()
+    .required("이메일을 입력해주세요")
+    .matches(/^[a-zA-Z]+$/, "영어만 입력 가능합니다"),
+  emailDomain: string()
+    .required("도메인을 입력해주세요")
+    .matches(/^(?:\w+\.)+\w+$/g, "정확한 도메인을 입력해주세요"),
+
+  birthYear: number()
+    .required("연도를 선택해주세요")
+    .typeError("연도를 선택해주세요"),
+  birthMonth: number()
+    .typeError("월을 선택해주세요")
+    .required("월을 선택해주세요"),
+  birthDay: number()
+    .typeError("일을 선택해주세요")
+    .required("일을 선택해주세요"),
+
+  //   email: object().shape({
+  //     mailName: string()
+  //       .required("이메일을 입력해주세요")
+  //       .matches(/^[a-zA-Z]+$/, "영어만 입력 가능합니다"),
+  //     domain: string()
+  //       .required("도메인을 입력해주세요")
+  //       .matches(/^(?:\w+\.)+\w+$/g, "정확한 도메인을 입력해주세요"),
+  //   }),
+  //   birthday: object().shape({
+  //     year: number()
+  //       .typeError("연도를 선택해주세요")
+  //       .required("연도를 선택해주세요"),
+  //     month: number()
+  //       .typeError("월을 선택해주세요")
+  //       .required("월을 선택해주세요"),
+  //     day: number().typeError("일을 선택해주세요").required("일을 선택해주세요"),
+  //   }),
 });
 
 export type User = InferType<typeof userSchema>;
