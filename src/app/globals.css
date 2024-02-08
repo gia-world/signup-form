@@ -1,3 +1,62 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.input-box {
+  position: relative;
+}
+
+.input-box input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid grey;
+  border-radius: 4px;
+}
+
+.btn {
+  cursor: pointer;
+  padding: 0.5rem;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+}
+
+.btn.check-username {
+  width: 6rem;
+}
+
+.input-box .error {
+  float: right;
+  color: #ff0000;
+}
+
+.input-box .multi {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.input-box select {
+  flex: 1;
+  padding: 0.5rem;
+  border: 1px solid grey;
+  border-radius: 4px;
+}
+
+.success {
+  color: #4caf50;
+  float: right;
+}
+
+.failure {
+  color: #ff0000;
+  float: right;
+}
